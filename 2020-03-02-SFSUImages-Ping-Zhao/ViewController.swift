@@ -10,25 +10,29 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var messageLabelSfsu: UILabel!
+    @IBOutlet weak var messageMovie: UILabel!
     
-    @IBOutlet weak var imageViewSfsu: UIImageView!
+    @IBOutlet weak var imageViewMovie: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        messageLabelSfsu.text = ""
+        messageMovie.text = ""
     }
 
     @IBAction func messageButtonPresssed(_ sender: UIButton) {
-        messageLabelSfsu.text = "Spider-Man: Into the Spider-Verse"
-        imageViewSfsu.image = UIImage(named: "image1")
-   
+        if messageMovie.text == "Parasite" {
+            messageMovie.text = "Joker"
+            imageViewMovie.image = UIImage(named: "movie1")
+        } else if messageMovie.text == "Joker" {
+            messageMovie.text = "1917"
+            imageViewMovie.image = UIImage(named: "movie2")
+        }else {
+            messageMovie.text = "Parasite"
+            imageViewMovie.image = UIImage(named: "movie0")
+        }
     }
     
-    @IBAction func messageButton2Pressed(_ sender: UIButton) {
-        messageLabelSfsu.text = "San Francisco State University"
-        imageViewSfsu.image = UIImage(named: "image0")
-    }
+
     
 }
 
